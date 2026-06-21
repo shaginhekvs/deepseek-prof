@@ -18,6 +18,8 @@
 /datasets/
 /config/
 /share/
+/logs/serve_repeated/
+/profiles/serve_repeated/
 
 # Editor and Python noise.
 __pycache__/

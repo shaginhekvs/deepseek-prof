@@ -1,0 +1,461 @@
+[
+  {
+    "library": "humming",
+    "status": "imported",
+    "file": "/scratch/deepseek-prof/env/py312/lib64/python3.12/site-packages/humming/__init__.py",
+    "attrs": [
+      "config",
+      "dtypes",
+      "humming",
+      "jit",
+      "kernel",
+      "ops",
+      "tune",
+      "utils"
+    ]
+  },
+  {
+    "library": "quack",
+    "status": "imported",
+    "file": "/scratch/deepseek-prof/env/py312/lib64/python3.12/site-packages/quack/__init__.py",
+    "attrs": [
+      "RoundingMode",
+      "autotuner",
+      "bench",
+      "cache",
+      "compile_utils",
+      "copy_utils",
+      "cross_entropy",
+      "cute_dsl_utils",
+      "dsl",
+      "layout_utils",
+      "os",
+      "reduce",
+      "reduction_base",
+      "rmsnorm",
+      "rmsnorm_config",
+      "rounding",
+      "softmax",
+      "utils"
+    ]
+  },
+  {
+    "library": "tokenspeed_mla",
+    "status": "imported",
+    "file": "/scratch/deepseek-prof/env/py312/lib64/python3.12/site-packages/tokenspeed_mla/__init__.py",
+    "attrs": [
+      "fmha",
+      "fmha_binary",
+      "fmha_helpers",
+      "get_num_sm",
+      "has_binary_prefill",
+      "mla_decode",
+      "mla_decode_fp16",
+      "mla_decode_fp8",
+      "mla_helpers",
+      "mla_kv_pack_quantize_fp8",
+      "mla_prefill",
+      "tokenspeed_mla_decode",
+      "tokenspeed_mla_prefill",
+      "utils",
+      "warmup_compile_prefill"
+    ]
+  },
+  {
+    "library": "tokenspeed_triton",
+    "status": "imported",
+    "file": "/scratch/deepseek-prof/env/py312/lib64/python3.12/site-packages/tokenspeed_triton/__init__.py",
+    "attrs": [
+      "AsyncCompileMode",
+      "CompilationError",
+      "Config",
+      "FutureKernel",
+      "InterpreterError",
+      "JITFunction",
+      "KernelInterface",
+      "MockTensor",
+      "OutOfResources",
+      "TensorWrapper",
+      "TritonError",
+      "aggregate",
+      "autotune",
+      "backends",
+      "cdiv",
+      "compile",
+      "compiler",
+      "constexpr_function",
+      "errors",
+      "heuristics",
+      "jit",
+      "knobs",
+      "language",
+      "must_use_result",
+      "next_power_of_2",
+      "reinterpret",
+      "runtime",
+      "set_allocator",
+      "testing",
+      "tools"
+    ]
+  },
+  {
+    "library": "cutlass",
+    "status": "imported",
+    "file": "/scratch/deepseek-prof/env/py312/lib64/python3.12/site-packages/nvidia_cutlass_dsl/python_packages/cutlass/__init__.py",
+    "attrs": [
+      "BFloat16",
+      "Boolean",
+      "CACHE_FILE",
+      "CUDA_VERSION",
+      "ComposedLayout",
+      "Constexpr",
+      "Coord",
+      "DSLAstPreprocessorError",
+      "DSLCudaVersion",
+      "DSLRuntimeError",
+      "Float",
+      "Float16",
+      "Float32",
+      "Float4E2M1FN",
+      "Float64",
+      "Float6E2M3FN",
+      "Float6E3M2FN",
+      "Float8E4M3",
+      "Float8E4M3B11FNUZ",
+      "Float8E4M3FN",
+      "Float8E5M2",
+      "Float8E8M0FNU",
+      "Int128",
+      "Int16",
+      "Int32",
+      "Int4",
+      "Int64",
+      "Int8",
+      "IntTuple",
+      "Integer",
+      "JitArgAdapterRegistry",
+      "LaunchConfig",
+      "Layout",
+      "LoopUnroll",
+      "Numeric",
+      "NumericMeta",
+      "Pointer",
+      "ScaledBasis",
+      "Shape",
+      "Stride",
+      "SymInt",
+      "TFloat32",
+      "Tensor",
+      "Tile",
+      "Tiler",
+      "TypedTensor",
+      "Uint16",
+      "Uint32",
+      "Uint64",
+      "Uint8",
+      "XTuple",
+      "all_",
+      "and_",
+      "any_",
+      "as_numeric",
+      "base_dsl",
+      "const_expr",
+      "cuda",
+      "cute",
+      "cutlass_dsl"
+    ]
+  },
+  {
+    "library": "liger",
+    "op": "rms_norm",
+    "shape": [
+      1024,
+      768
+    ],
+    "baseline_ms": 0.046592001914978025,
+    "candidate_ms": 0.08128447532653808,
+    "speedup": 0.5731968094498665,
+    "max_rel_error": 0.0059604644775390625
+  },
+  {
+    "library": "liger",
+    "op": "layer_norm",
+    "shape": [
+      1024,
+      768
+    ],
+    "baseline_ms": 0.01159168004989624,
+    "candidate_ms": 0.060559358596801754,
+    "speedup": 0.191410218312788,
+    "max_rel_error": 0.005235602147877216
+  },
+  {
+    "library": "liger",
+    "op": "rms_norm",
+    "shape": [
+      8192,
+      768
+    ],
+    "baseline_ms": 0.20176319122314454,
+    "candidate_ms": 0.10856320381164551,
+    "speedup": 1.8584859707456562,
+    "max_rel_error": 0.0059604644775390625
+  },
+  {
+    "library": "liger",
+    "op": "layer_norm",
+    "shape": [
+      8192,
+      768
+    ],
+    "baseline_ms": 0.0561356782913208,
+    "candidate_ms": 0.06022848129272461,
+    "speedup": 0.9320453892650585,
+    "max_rel_error": 0.013215859420597553
+  },
+  {
+    "library": "liger",
+    "op": "rms_norm",
+    "shape": [
+      1024,
+      3072
+    ],
+    "baseline_ms": 0.10350144386291504,
+    "candidate_ms": 0.08220671653747559,
+    "speedup": 1.2590387771506701,
+    "max_rel_error": 0.007194244768470526
+  },
+  {
+    "library": "liger",
+    "op": "layer_norm",
+    "shape": [
+      1024,
+      3072
+    ],
+    "baseline_ms": 0.034324479103088376,
+    "candidate_ms": 0.05982207775115967,
+    "speedup": 0.573776110650436,
+    "max_rel_error": 0.0059604644775390625
+  },
+  {
+    "library": "liger",
+    "op": "rms_norm",
+    "shape": [
+      8192,
+      3072
+    ],
+    "baseline_ms": 0.7553433227539063,
+    "candidate_ms": 0.41869312286376953,
+    "speedup": 1.8040499867481052,
+    "max_rel_error": 0.0059604644775390625
+  },
+  {
+    "library": "liger",
+    "op": "layer_norm",
+    "shape": [
+      8192,
+      3072
+    ],
+    "baseline_ms": 0.29908992767333986,
+    "candidate_ms": 0.2104319953918457,
+    "speedup": 1.4213139362025442,
+    "max_rel_error": 0.015306122601032257
+  },
+  {
+    "library": "liger",
+    "op": "swiglu",
+    "shape": [
+      1024,
+      3072
+    ],
+    "baseline_ms": 0.06920191764831543,
+    "candidate_ms": 0.04440063953399658,
+    "speedup": 1.5585792991861989,
+    "max_rel_error": 0.0011771629797294736
+  },
+  {
+    "library": "liger",
+    "op": "swiglu",
+    "shape": [
+      8192,
+      3072
+    ],
+    "baseline_ms": 0.521789436340332,
+    "candidate_ms": 0.31438848495483396,
+    "speedup": 1.659696398916436,
+    "max_rel_error": 0.0013708019396290183
+  },
+  {
+    "library": "liger",
+    "op": "softmax",
+    "shape": [
+      1024,
+      50272
+    ],
+    "baseline_ms": 0.7039155578613281,
+    "candidate_ms": 0.8568831634521484,
+    "speedup": 0.8214837073299986,
+    "max_rel_error": 0.0059604644775390625
+  },
+  {
+    "library": "liger",
+    "op": "softmax",
+    "shape": [
+      128,
+      50272
+    ],
+    "baseline_ms": 0.08095744132995605,
+    "candidate_ms": 0.10981375694274903,
+    "speedup": 0.7372249487116892,
+    "max_rel_error": 0.0059604644775390625
+  },
+  {
+    "library": "hf_kernels",
+    "repo": "kernels-community/activation",
+    "status": "loaded",
+    "attrs": [
+      "fatrelu_and_mul",
+      "gelu",
+      "gelu_and_mul",
+      "gelu_fast",
+      "gelu_new",
+      "gelu_quick",
+      "gelu_tanh",
+      "gelu_tanh_and_mul",
+      "layers",
+      "mul_and_silu",
+      "ops",
+      "silu",
+      "silu_and_mul",
+      "torch"
+    ]
+  },
+  {
+    "library": "hf_kernels",
+    "repo": "kernels-community/triton_kernels",
+    "status": "load_error",
+    "error": "HfHubHTTPError(\"Client error '401 Unauthorized' for url 'https://huggingface.co/api/kernels/kernels-community/triton_kernels/refs' (Request ID: Root=1-6a37bf7e-6f584caf20c5de8d6b24f825;4fbc87c8-85fa-471d-a96b-d2a8c77d2ccc)\\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/401\\n\\nInvalid username or password.\")"
+  },
+  {
+    "library": "hf_kernels",
+    "repo": "kernels-community/activation",
+    "op": "silu_and_mul",
+    "shape": [
+      1024,
+      3072
+    ],
+    "baseline_ms": 0.07452672004699706,
+    "candidate_ms": 0.04220928192138672,
+    "speedup": 1.7656476645539818,
+    "max_rel_error": 0.0
+  },
+  {
+    "library": "hf_kernels",
+    "repo": "kernels-community/activation",
+    "op": "gelu_tanh_and_mul",
+    "shape": [
+      1024,
+      3072
+    ],
+    "baseline_ms": 0.07438528060913085,
+    "candidate_ms": 0.04222976207733154,
+    "speedup": 1.761442095575055,
+    "max_rel_error": 0.0
+  },
+  {
+    "library": "hf_kernels",
+    "repo": "kernels-community/activation",
+    "op": "silu_and_mul",
+    "shape": [
+      8192,
+      3072
+    ],
+    "baseline_ms": 0.5362278366088867,
+    "candidate_ms": 0.3192844772338867,
+    "speedup": 1.6794672927869327,
+    "max_rel_error": 0.0
+  },
+  {
+    "library": "hf_kernels",
+    "repo": "kernels-community/activation",
+    "op": "gelu_tanh_and_mul",
+    "shape": [
+      8192,
+      3072
+    ],
+    "baseline_ms": 0.5410406494140625,
+    "candidate_ms": 0.3259801483154297,
+    "speedup": 1.6597349630338003,
+    "max_rel_error": 0.0
+  },
+  {
+    "library": "quack",
+    "op": "rms_norm",
+    "shape": [
+      1024,
+      768
+    ],
+    "baseline_ms": 0.046039037704467774,
+    "candidate_ms": 0.06605120182037354,
+    "speedup": 0.6970204392294191,
+    "max_rel_error": 0.0059604644775390625
+  },
+  {
+    "library": "quack",
+    "op": "rms_norm",
+    "shape": [
+      8192,
+      768
+    ],
+    "baseline_ms": 0.2047577667236328,
+    "candidate_ms": 0.06438911914825439,
+    "speedup": 3.1800057126450665,
+    "max_rel_error": 0.0059604644775390625
+  },
+  {
+    "library": "quack",
+    "op": "rms_norm",
+    "shape": [
+      1024,
+      3072
+    ],
+    "baseline_ms": 0.10548992156982422,
+    "candidate_ms": 0.06404096126556397,
+    "speedup": 1.647225767464364,
+    "max_rel_error": 0.0059604644775390625
+  },
+  {
+    "library": "quack",
+    "op": "rms_norm",
+    "shape": [
+      8192,
+      3072
+    ],
+    "baseline_ms": 0.7564902496337891,
+    "candidate_ms": 0.2104729652404785,
+    "speedup": 3.594239520355746,
+    "max_rel_error": 0.0059604644775390625
+  },
+  {
+    "library": "quack",
+    "op": "softmax",
+    "shape": [
+      1024,
+      50272
+    ],
+    "status": "bench_error",
+    "baseline_ms": 0.7003545379638672,
+    "error": "RuntimeError('CUDA Error: cudaErrorInvalidValue')"
+  },
+  {
+    "library": "quack",
+    "op": "softmax",
+    "shape": [
+      128,
+      50272
+    ],
+    "status": "bench_error",
+    "baseline_ms": 0.08019968032836915,
+    "error": "RuntimeError('CUDA Error: cudaErrorInvalidValue')"
+  }
+]

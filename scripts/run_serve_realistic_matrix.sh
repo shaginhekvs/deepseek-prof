@@ -18,8 +18,8 @@ CONCURRENCIES="${CONCURRENCIES:-1 8 32}"
 TEMPERATURE="${TEMPERATURE:-0}"
 PLOT_TIMELINE="${PLOT_TIMELINE:-0}"
 
-OUT_DIR="/scratch/deepseek-prof/profiles/serve_realistic"
-LOG_DIR="/scratch/deepseek-prof/logs/serve_realistic"
+OUT_DIR="${OUT_DIR:-/scratch/deepseek-prof/profiles/serve_realistic}"
+LOG_DIR="${LOG_DIR:-/scratch/deepseek-prof/logs/serve_realistic}"
 mkdir -p "$OUT_DIR" "$LOG_DIR"
 
 server_log="$LOG_DIR/server_${MODEL//\//_}_${PORT}.log"
