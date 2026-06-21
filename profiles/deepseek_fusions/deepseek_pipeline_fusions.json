@@ -1,0 +1,176 @@
+[
+  {
+    "section": "deepseek_mlp_silu_and_mul",
+    "shape": [
+      128,
+      2048
+    ],
+    "torch_ms": 0.023982079029083253,
+    "vllm_c_ms": 0.012615679502487183,
+    "vllm_c_speedup_vs_torch": 1.9009740239798563,
+    "vllm_c_abs_error": 0.0,
+    "hf_ms": 0.0052019202709198,
+    "hf_speedup_vs_torch": 4.610235793722143,
+    "hf_speedup_vs_vllm_c": 2.4251966284474573,
+    "hf_abs_error": 0.0,
+    "helion_ms": 0.034757759571075436,
+    "helion_first_call_s": 0.7288212776184082,
+    "helion_speedup_vs_torch": 0.689977700664014,
+    "helion_speedup_vs_vllm_c": 0.3629600888598598,
+    "helion_abs_error": 0.0078125,
+    "helion_rel_error": 0.0059604644775390625,
+    "helion_first_abs_error": 0.0078125
+  },
+  {
+    "section": "deepseek_mlp_silu_and_mul",
+    "shape": [
+      1024,
+      2048
+    ],
+    "torch_ms": 0.05027840137481689,
+    "vllm_c_ms": 0.027628159523010253,
+    "vllm_c_speedup_vs_torch": 1.8198244922157145,
+    "vllm_c_abs_error": 0.0,
+    "hf_ms": 0.028979198932647707,
+    "hf_speedup_vs_torch": 1.7349824434992815,
+    "hf_speedup_vs_vllm_c": 0.9533789939198289,
+    "hf_abs_error": 0.0,
+    "helion_ms": 0.0341811203956604,
+    "helion_first_call_s": 0.07689094543457031,
+    "helion_speedup_vs_torch": 1.4709407062385287,
+    "helion_speedup_vs_vllm_c": 0.8082871246817847,
+    "helion_abs_error": 0.0078125,
+    "helion_rel_error": 0.011920928955078125,
+    "helion_first_abs_error": 0.0078125
+  },
+  {
+    "section": "deepseek_mlp_silu_and_mul",
+    "shape": [
+      1024,
+      4096
+    ],
+    "torch_ms": 0.0963532829284668,
+    "vllm_c_ms": 0.05404672145843506,
+    "vllm_c_speedup_vs_torch": 1.7827775733365778,
+    "vllm_c_abs_error": 0.0,
+    "hf_ms": 0.05478400230407715,
+    "hf_speedup_vs_torch": 1.758785026213683,
+    "hf_speedup_vs_vllm_c": 0.9865420412048423,
+    "hf_abs_error": 0.0,
+    "helion_ms": 0.05361663818359375,
+    "helion_first_call_s": 0.07246947288513184,
+    "helion_speedup_vs_torch": 1.7970780375773374,
+    "helion_speedup_vs_vllm_c": 1.0080214517249033,
+    "helion_abs_error": 0.0078125,
+    "helion_rel_error": 0.0059604644775390625,
+    "helion_first_abs_error": 0.0078125
+  },
+  {
+    "section": "deepseek_mlp_silu_and_mul",
+    "shape": [
+      8192,
+      3072
+    ],
+    "torch_ms": 0.5389926528930664,
+    "vllm_c_ms": 0.3111321640014648,
+    "vllm_c_speedup_vs_torch": 1.7323591555469295,
+    "vllm_c_abs_error": 0.0,
+    "hf_ms": 0.31954944610595704,
+    "hf_speedup_vs_torch": 1.6867269196090104,
+    "hf_speedup_vs_vllm_c": 0.9736589056652559,
+    "hf_abs_error": 0.0,
+    "helion_ms": 0.3076070404052734,
+    "helion_first_call_s": 0.07175517082214355,
+    "helion_speedup_vs_torch": 1.7522116924987854,
+    "helion_speedup_vs_vllm_c": 1.0114598274199025,
+    "helion_abs_error": 0.0078125,
+    "helion_rel_error": 0.011920928955078125,
+    "helion_first_abs_error": 0.0078125
+  },
+  {
+    "section": "deepseek_mla_scale_plus_post_attention_rmsnorm",
+    "shape": [
+      128,
+      3072
+    ],
+    "torch_ms": 0.10805631637573242,
+    "vllm_scale_then_c_ms": 0.039690239429473875,
+    "vllm_scale_then_c_speedup_vs_torch": 2.722490917892777,
+    "vllm_out_abs_error": 0.0078125,
+    "vllm_residual_abs_error": 3.814697265625e-06,
+    "helion_ms": 0.04122623920440674,
+    "helion_first_call_s": 0.1573936939239502,
+    "helion_speedup_vs_torch": 2.6210568429482675,
+    "helion_speedup_vs_vllm_scale_then_c": 0.9627421805972377,
+    "helion_out_abs_error": 0.0078125,
+    "helion_residual_abs_error": 0.0,
+    "helion_first_out_abs_error": 0.0078125
+  },
+  {
+    "section": "deepseek_mla_scale_plus_post_attention_rmsnorm",
+    "shape": [
+      1024,
+      3072
+    ],
+    "torch_ms": 0.5238169479370117,
+    "vllm_scale_then_c_ms": 0.1637171173095703,
+    "vllm_scale_then_c_speedup_vs_torch": 3.199524622379796,
+    "vllm_out_abs_error": 0.0078125,
+    "vllm_residual_abs_error": 6.103515625e-05,
+    "helion_ms": 0.05306367874145508,
+    "helion_first_call_s": 0.1348586082458496,
+    "helion_speedup_vs_torch": 9.871478200545278,
+    "helion_speedup_vs_vllm_scale_then_c": 3.0852952752721445,
+    "helion_out_abs_error": 0.015625,
+    "helion_residual_abs_error": 0.0,
+    "helion_first_out_abs_error": 0.015625
+  },
+  {
+    "section": "deepseek_mla_scale_plus_post_attention_rmsnorm",
+    "shape": [
+      8192,
+      3072
+    ],
+    "torch_ms": 3.9813919067382812,
+    "vllm_scale_then_c_ms": 1.2563046264648436,
+    "vllm_scale_then_c_speedup_vs_torch": 3.169129383803711,
+    "vllm_out_abs_error": 0.0078125,
+    "vllm_residual_abs_error": 0.0001220703125,
+    "helion_ms": 0.40574657440185546,
+    "helion_first_call_s": 0.14848566055297852,
+    "helion_speedup_vs_torch": 9.812508984475297,
+    "helion_speedup_vs_vllm_scale_then_c": 3.0962790710355743,
+    "helion_out_abs_error": 0.015625,
+    "helion_residual_abs_error": 5.960464477539063e-08,
+    "helion_first_out_abs_error": 0.015625
+  },
+  {
+    "section": "deepseek_moe_backend_probe",
+    "gpu": "NVIDIA A10",
+    "capability": [
+      8,
+      6
+    ]
+  },
+  {
+    "section": "deepseek_moe_backend_probe",
+    "backend": "flashinfer_cutedsl_moe_nvfp4",
+    "symbol_available": true,
+    "current_device_supported": false,
+    "note": "vLLM requires CUDA SM100 family for this provider."
+  },
+  {
+    "section": "deepseek_moe_backend_probe",
+    "backend": "flashinfer_cutedsl_grouped_gemm_nt_masked",
+    "symbol_available": true,
+    "current_device_supported": false,
+    "note": "Used by FlashInfer CuteDSL batched MoE paths when supported."
+  },
+  {
+    "section": "deepseek_moe_backend_probe",
+    "backend": "cutlass_dsl_python",
+    "available": true,
+    "module": "/scratch/deepseek-prof/env/py312/lib64/python3.12/site-packages/nvidia_cutlass_dsl/python_packages/cutlass/__init__.py",
+    "note": "Available for custom GEMM labs; vLLM MoE CUTLASS paths are quantization/backend-specific."
+  }
+]

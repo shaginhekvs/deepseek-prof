@@ -1,0 +1,133 @@
+[0s] Starting LFBOTreeSearch with initial_population=FROM_BEST_AVAILABLE, copies=2, max_generations=5, similarity_penalty=1.0
+[0s] Starting with default config
+[0s] Initial population: 1 total
+[5s] Adaptive compile timeout: 30s (90% percentile=0.2s, bounds=[30.0s, 60s])
+[5s] Initial random population of 1, 1 starting points: 
+ok=1
+min=0.4219
+mid=0.4219
+max=0.4219
+best={'atomic_indexing': [],
+ 'block_sizes': [1],
+ 'indexing': ['pointer', 'pointer', 'pointer', 'pointer', 'pointer', 'pointer', 'pointer',
+              'pointer', 'pointer', 'pointer', 'pointer', 'pointer'],
+ 'load_eviction_policies': ['', '', '', '', '', '', '', ''],
+ 'num_stages': 1,
+ 'num_warps': 4,
+ 'pid_type': 'flat',
+ 'range_flattens': [None],
+ 'range_multi_buffers': [None],
+ 'range_num_stages': [0],
+ 'range_unroll_factors': [0],
+ 'range_warp_specializes': [],
+ 'reduction_loops': [None]}
+[5s] All labels are identical, skip training surrogate.
+[5s] Generation 1 starting: 6 neighbors, 1 active search path(s)
+[6s] Generation 1 complete: 
+ok=8
+min=0.4210
+mid=0.4905
+max=0.6318
+best={'atomic_indexing': [],
+ 'block_sizes': [1],
+ 'indexing': ['pointer', 'pointer', 'pointer', 'pointer', 'pointer', 'pointer', 'pointer',
+              'pointer', 'pointer', 'pointer', 'pointer', 'pointer'],
+ 'load_eviction_policies': ['', '', '', '', '', '', '', ''],
+ 'num_sm_multiplier': 1,
+ 'num_stages': 1,
+ 'num_warps': 8,
+ 'pid_type': 'persistent_blocked',
+ 'range_flattens': [None],
+ 'range_multi_buffers': [None],
+ 'range_num_stages': [0],
+ 'range_unroll_factors': [0],
+ 'range_warp_specializes': [],
+ 'reduction_loops': [1024]}
+[6s] Fitting surrogate: 8 points, 8 targets
+[6s] Generation 2 starting: 13 neighbors, 1 active search path(s)
+[8s] Generation 2 complete: 
+ok=14
+min=0.4209
+mid=0.4741
+max=0.9252
+best={'atomic_indexing': [],
+ 'block_sizes': [2],
+ 'indexing': ['pointer', 'pointer', 'pointer', 'pointer', 'pointer', 'pointer', 'pointer',
+              'pointer', 'pointer', 'pointer', 'pointer', 'pointer'],
+ 'load_eviction_policies': ['', '', '', '', 'last', '', '', ''],
+ 'num_sm_multiplier': 1,
+ 'num_stages': 1,
+ 'num_warps': 16,
+ 'pid_type': 'persistent_blocked',
+ 'range_flattens': [None],
+ 'range_multi_buffers': [None],
+ 'range_num_stages': [0],
+ 'range_unroll_factors': [0],
+ 'range_warp_specializes': [],
+ 'reduction_loops': [1024]}
+[8s] Fitting surrogate: 21 points, 21 targets
+[9s] Generation 3 starting: 16 neighbors, 1 active search path(s)
+[11s] Generation 3 complete: 
+ok=17
+min=0.4198
+mid=0.4229
+max=0.6502
+best={'atomic_indexing': [],
+ 'block_sizes': [1],
+ 'indexing': ['pointer', 'pointer', 'pointer', 'pointer', 'pointer', 'pointer', 'pointer',
+              'pointer', 'pointer', 'pointer', 'pointer', 'pointer'],
+ 'load_eviction_policies': ['last', '', '', '', 'last', '', '', ''],
+ 'num_sm_multiplier': 1,
+ 'num_stages': 1,
+ 'num_warps': 8,
+ 'pid_type': 'persistent_blocked',
+ 'range_flattens': [None],
+ 'range_multi_buffers': [None],
+ 'range_num_stages': [0],
+ 'range_unroll_factors': [0],
+ 'range_warp_specializes': [],
+ 'reduction_loops': [1024]}
+[11s] Fitting surrogate: 37 points, 37 targets
+[11s] Generation 4 starting: 16 neighbors, 1 active search path(s)
+[13s] Generation 4 complete: 
+ok=17
+min=0.4168
+mid=0.4219
+max=0.4577
+best={'atomic_indexing': [],
+ 'block_sizes': [1],
+ 'indexing': ['pointer', 'pointer', 'pointer', 'pointer', 'pointer', 'pointer', 'pointer',
+              'pointer', 'pointer', 'pointer', 'pointer', 'pointer'],
+ 'load_eviction_policies': ['last', '', '', '', 'last', '', '', ''],
+ 'num_sm_multiplier': 1,
+ 'num_stages': 1,
+ 'num_warps': 8,
+ 'pid_type': 'persistent_blocked',
+ 'range_flattens': [None],
+ 'range_multi_buffers': [None],
+ 'range_num_stages': [0],
+ 'range_unroll_factors': [0],
+ 'range_warp_specializes': [],
+ 'reduction_loops': [2048]}
+[13s] Fitting surrogate: 53 points, 53 targets
+[13s] Generation 5 starting: 13 neighbors, 1 active search path(s)
+[15s] Generation 5 complete: 
+ok=14
+min=0.4065
+mid=0.4181
+max=0.4751
+best={'atomic_indexing': [],
+ 'block_sizes': [1],
+ 'indexing': ['pointer', 'pointer', 'pointer', 'pointer', 'pointer', 'pointer', 'pointer',
+              'pointer', 'pointer', 'pointer', 'pointer', 'pointer'],
+ 'load_eviction_policies': ['last', '', 'last', '', 'last', '', '', ''],
+ 'num_sm_multiplier': 1,
+ 'num_stages': 1,
+ 'num_warps': 4,
+ 'pid_type': 'persistent_blocked',
+ 'range_flattens': [None],
+ 'range_multi_buffers': [None],
+ 'range_num_stages': [0],
+ 'range_unroll_factors': [0],
+ 'range_warp_specializes': [],
+ 'reduction_loops': [2048]}
