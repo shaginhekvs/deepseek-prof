@@ -1,0 +1,34 @@
+[
+  {
+    "shape": [
+      1024,
+      3072
+    ],
+    "dtype": "torch.float16",
+    "torch_ms": 0.07585792064666748,
+    "helion_first_call_s": 0.5959265232086182,
+    "helion_max_rel_error": 0.011920928955078125,
+    "helion_ms": 0.040979838371276854,
+    "helion_speedup_vs_torch": 1.8511034611555959,
+    "helion_max_rel_error_after_timing": 0.011920928955078125,
+    "hf_activation_ms": 0.042004480361938476,
+    "hf_activation_speedup_vs_torch": 1.8059483177276638,
+    "hf_activation_max_rel_error": 0.0
+  },
+  {
+    "shape": [
+      8192,
+      3072
+    ],
+    "dtype": "torch.float16",
+    "torch_ms": 0.5382086563110352,
+    "helion_first_call_s": 53.92470645904541,
+    "helion_max_rel_error": 0.011920928955078125,
+    "helion_ms": 0.3092448043823242,
+    "helion_speedup_vs_torch": 1.7403967623192123,
+    "helion_max_rel_error_after_timing": 0.011920928955078125,
+    "hf_activation_ms": 0.31307775497436524,
+    "hf_activation_speedup_vs_torch": 1.7190894203106306,
+    "hf_activation_max_rel_error": 0.0
+  }
+]

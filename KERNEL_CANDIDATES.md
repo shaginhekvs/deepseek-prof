@@ -47,6 +47,15 @@ The current decode-heavy Nsight trace points at these targets:
 - Role: MLA prefill/decode kernels and FP8 KV packing.
 - Best use here: high-priority DeepSeek experiment. The public API exposes `tokenspeed_mla_prefill`, `tokenspeed_mla_decode`, and `mla_kv_pack_quantize_fp8`, so the next serious experiment is to match those inputs to vLLM's DeepSeek MLA tensors and compare against the current vLLM attention path.
 
+### Helion
+
+- Source: `https://github.com/pytorch/helion`
+- Installed package: `helion`
+- Role: Python-embedded kernel DSL that compiles to Triton and autotunes generated implementations.
+- Best use here: author shape-specific fused kernels after Nsight identifies a hot op. It is especially useful for experimenting before deciding whether to write/maintain raw Triton or CUDA.
+- Local lab: see `/scratch/deepseek-prof/HELION_EXPERIMENTS.md`.
+- Local result: fused `silu_and_mul` was about `1.74-1.85x` faster than raw Torch and slightly faster than HF activation on the two tested shapes.
+
 ### Already Installed vLLM-Adjacent Kernels
 
 - `flashinfer-python`
@@ -55,6 +64,7 @@ The current decode-heavy Nsight trace points at these targets:
 - `tokenspeed-triton`
 - `tokenspeed_mla`
 - `nvidia-cutlass-dsl`
+- `helion`
 
 These are especially relevant because vLLM may already integrate or compete with them. `tokenspeed_mla` is interesting for MLA-like DeepSeek paths.
 
