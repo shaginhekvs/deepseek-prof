@@ -56,6 +56,16 @@ The current decode-heavy Nsight trace points at these targets:
 - Local lab: see `/scratch/deepseek-prof/HELION_EXPERIMENTS.md`.
 - Local result: fused `silu_and_mul` was about `1.74-1.85x` faster than raw Torch and slightly faster than HF activation on the two tested shapes.
 
+### CUTLASS / CuTe DSL
+
+- Source: `https://github.com/NVIDIA/cutlass`
+- Installed package: `nvidia-cutlass-dsl`
+- Local clone: `/scratch/deepseek-prof/src/cutlass`
+- Role: Tensor Core GEMM/GEMM-like kernels, fused epilogues, grouped GEMM, and low-level CuTe DSL kernel authoring.
+- Best use here: compare exact vLLM/DeepSeek GEMM shapes against cuBLAS/vLLM, then specialize only if a shape or epilogue makes CUTLASS better.
+- Local lab: see `/scratch/deepseek-prof/CUTLASS_EXPERIMENTS.md`.
+- Local result: plain fp16 CUTLASS BMM was `1.21x` faster than `torch.bmm` on `(B=2,M=512,N=512,K=256)`, but slower on smaller batched shapes. This points toward shape-specific or epilogue-fused CUTLASS work rather than a broad drop-in replacement.
+
 ### Already Installed vLLM-Adjacent Kernels
 
 - `flashinfer-python`
