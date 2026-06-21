@@ -1,0 +1,18 @@
+==WARNING== No metrics to collect found in sections.
+==PROF== Connected to process 96166 (/usr/bin/python3.12)
+==PROF== Profiling "distribution_elementwise_grid..." - 0: 0%....50%....100% - 1 pass
+==PROF== Profiling "distribution_elementwise_grid..." - 1: 0%....50%....100% - 1 pass
+==PROF== Profiling "ampere_fp16_s1688gemm_fp16_12..." - 2: 0%....50%....100% - 1 pass
+==PROF== Profiling "vectorized_elementwise_kernel" - 3: 0%....50%....100% - 1 pass
+==PROF== Profiling "ampere_fp16_s1688gemm_fp16_12..." - 4: 0%....50%....100% - 1 pass
+==PROF== Profiling "vectorized_elementwise_kernel" - 5: 0%....50%....100% - 1 pass
+==PROF== Profiling "ampere_fp16_s1688gemm_fp16_12..." - 6: 0%....50%....100% - 1 pass
+==PROF== Profiling "vectorized_elementwise_kernel" - 7: 0%....50%....100% - 1 pass
+==PROF== Profiling "ampere_fp16_s1688gemm_fp16_12..." - 8: 0%....50%....100% - 1 pass
+==PROF== Profiling "vectorized_elementwise_kernel" - 9: 0%....50%....100% - 1 pass
+==PROF== Profiling "ampere_fp16_s1688gemm_fp16_12..." - 10: 0%....50%....100% - 1 pass
+==PROF== Profiling "vectorized_elementwise_kernel" - 11: 0%....50%....100% - 1 pass
+==PROF== Profiling "unrolled_elementwise_kernel" - 12: 0%....50%....100% - 1 pass
+==PROF== Profiling "reduce_kernel" - 13: 0%....50%....100% - 1 pass
+==PROF== Disconnected from process 96166
+==PROF== Report: /scratch/deepseek-prof/profiles/ncu/torch_smoke_speed_of_light.ncu-rep

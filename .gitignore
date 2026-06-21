@@ -1,0 +1,25 @@
+# Rebuildable local environments and package caches.
+/env/*
+!/env/scratch_env.sh
+/cache/*
+
+# Keep the small compiler lab caches; these are useful teaching artifacts.
+!/cache/torchinductor_lab/
+!/cache/torchinductor_lab/**
+!/cache/triton_lab/
+!/cache/triton_lab/**
+
+# Upstream source clones are recorded in SOURCE_REVISIONS.md instead of vendored.
+/src/
+
+# Local scratch-only runtime directories.
+/tmp/
+/models/
+/datasets/
+/config/
+/share/
+
+# Editor and Python noise.
+__pycache__/
+*.py[cod]
+.DS_Store
