@@ -23,3 +23,7 @@
 __pycache__/
 *.py[cod]
 .DS_Store
+
+# Nsight SQLite exports can exceed GitHub's hard file-size limit. Keep
+# .nsys-rep plus .stats.txt; regenerate SQLite locally with nsys export/stats.
+/profiles/nsys/serve_*.sqlite

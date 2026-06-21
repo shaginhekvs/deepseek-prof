@@ -51,11 +51,9 @@ export NCCL_DEBUG_SUBSYS=INIT,NET,GRAPH,ENV
 export NCCL_TOPO_DUMP_FILE="$DSPROF_LOGS/nccl_topo.xml"
 export NCCL_DEBUG_FILE="$DSPROF_LOGS/nccl_%h_%p.log"
 
-# Nsight Systems is on PATH already on this host. Nsight Compute is installed
-# but not always on PATH, so add it when present.
-if [ -d /usr/local/cuda-13.2/bin ]; then
-  export PATH="/usr/local/cuda-13.2/bin:$PATH"
-fi
+# Nsight Systems is on PATH at /usr/local/bin on this host. Avoid prepending
+# /usr/local/cuda-13.2/bin because its nsys wrapper is not wired correctly here.
+# Nsight Compute is installed but not always on PATH, so add it when present.
 if [ -d /opt/nvidia/nsight-compute/2026.1.1 ]; then
   export PATH="/opt/nvidia/nsight-compute/2026.1.1:$PATH"
 fi
