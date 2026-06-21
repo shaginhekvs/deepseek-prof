@@ -74,6 +74,18 @@ Interpretation: do not integrate a plain Helion GEMM into vLLM for this bottlene
 
 This was tested against OPT-125M proxy shapes because no DeepSeek model/trace is currently present under the scratch model/cache/profile directories. A true DeepSeek-V4 run should repeat the same method using actual MLA/MLP shapes from the trace.
 
+## Fusion Bottleneck Probe
+
+The best Helion result so far is not GEMM. It is fusing bottleneck-adjacent elementwise work:
+
+- `add + RMSNorm`: up to about `3.6x` faster than the Torch composite in the local lab.
+- `silu * gate + residual`: faster than the Torch composite on larger shapes, and sometimes faster than HF activation plus a separate residual add.
+- `silu * gate + residual + RMSNorm`: failed to find a working Helion config and should not be integrated yet.
+
+Detailed A10 configs and timings are in:
+
+- `/scratch/deepseek-prof/HELION_A10_FUSION_FINDINGS.md`
+
 ## What To Try With Helion
 
 Good candidates:

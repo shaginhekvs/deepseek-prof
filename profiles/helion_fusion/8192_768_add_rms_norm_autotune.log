@@ -1,0 +1,90 @@
+[0s] Starting LFBOTreeSearch with initial_population=FROM_BEST_AVAILABLE, copies=2, max_generations=5, similarity_penalty=1.0
+[0s] Starting with default config
+[0s] Initial population: 2 total
+[5s] Adaptive compile timeout: 30s (90% percentile=0.8s, bounds=[30.0s, 60s])
+[5s] Initial random population of 2, 2 starting points: 
+ok=2
+min=0.0788
+mid=0.0819
+max=0.0819
+best={'atomic_indexing': [],
+ 'block_sizes': [16],
+ 'indexing': ['pointer', 'pointer', 'pointer', 'block_ptr', 'pointer', 'pointer', 'pointer',
+              'pointer', 'pointer', 'pointer'],
+ 'load_eviction_policies': ['', '', '', '', '', '', '', ''],
+ 'num_stages': 1,
+ 'num_warps': 1,
+ 'pid_type': 'flat',
+ 'range_flattens': [None],
+ 'range_multi_buffers': [None],
+ 'range_num_stages': [0],
+ 'range_unroll_factors': [0],
+ 'range_warp_specializes': [],
+ 'reduction_loops': [None]}
+[5s] Fitting surrogate: 2 points, 2 targets
+[5s] Generation 1 starting: 13 neighbors, 2 active search path(s)
+[10s] Generation 1 complete: 
+ok=15
+min=0.0788
+mid=0.0891
+max=0.4434
+best={'atomic_indexing': [],
+ 'block_sizes': [16],
+ 'indexing': ['pointer', 'pointer', 'pointer', 'block_ptr', 'pointer', 'pointer', 'pointer',
+              'pointer', 'pointer', 'pointer'],
+ 'load_eviction_policies': ['', '', '', '', '', '', '', ''],
+ 'num_stages': 1,
+ 'num_warps': 1,
+ 'pid_type': 'flat',
+ 'range_flattens': [None],
+ 'range_multi_buffers': [None],
+ 'range_num_stages': [0],
+ 'range_unroll_factors': [0],
+ 'range_warp_specializes': [],
+ 'reduction_loops': [None]}
+[10s] Fitting surrogate: 15 points, 15 targets
+[11s] Generation 2 starting: 9 neighbors, 2 active search path(s)
+[13s] Generation 2 complete: 
+ok=11
+min=0.0788
+mid=0.0809
+max=0.1413
+best={'atomic_indexing': [],
+ 'block_sizes': [16],
+ 'indexing': ['pointer', 'pointer', 'pointer', 'block_ptr', 'pointer', 'pointer', 'pointer',
+              'pointer', 'pointer', 'pointer'],
+ 'load_eviction_policies': ['', '', '', '', '', '', '', ''],
+ 'num_stages': 1,
+ 'num_warps': 1,
+ 'pid_type': 'flat',
+ 'range_flattens': [None],
+ 'range_multi_buffers': [None],
+ 'range_num_stages': [0],
+ 'range_unroll_factors': [0],
+ 'range_warp_specializes': [],
+ 'reduction_loops': [None]}
+[13s] Fitting surrogate: 24 points, 24 targets
+[13s] Copy 0 finish because of no improvement
+[13s] Generation 3 starting: 11 neighbors, 1 active search path(s)
+[15s] Generation 3 complete: 
+ok=13
+min=0.0788
+mid=0.0809
+max=0.1280
+best={'atomic_indexing': [],
+ 'block_sizes': [16],
+ 'indexing': ['pointer', 'pointer', 'pointer', 'block_ptr', 'pointer', 'pointer', 'pointer',
+              'pointer', 'pointer', 'pointer'],
+ 'load_eviction_policies': ['', '', '', '', '', '', '', ''],
+ 'num_stages': 1,
+ 'num_warps': 1,
+ 'pid_type': 'flat',
+ 'range_flattens': [None],
+ 'range_multi_buffers': [None],
+ 'range_num_stages': [0],
+ 'range_unroll_factors': [0],
+ 'range_warp_specializes': [],
+ 'reduction_loops': [None]}
+[15s] Fitting surrogate: 36 points, 36 targets
+[15s] Copy 1 finish because of no improvement
+[15s] Autotuning stop at generation 4 because of no active search path

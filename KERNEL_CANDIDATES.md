@@ -56,6 +56,7 @@ The current decode-heavy Nsight trace points at these targets:
 - Local lab: see `/scratch/deepseek-prof/HELION_EXPERIMENTS.md`.
 - Local result: fused `silu_and_mul` was about `1.74-1.85x` faster than raw Torch and slightly faster than HF activation on the two tested shapes.
 - Local GEMM result: plain Helion GEMM lost to PyTorch/cuBLAS on the current decode-linear proxy shapes, so Helion should not replace the small-GEMM path directly.
+- Local fusion result: `add + RMSNorm` is the strongest Helion target so far, up to about `3.6x` over the Torch composite on A10 proxy shapes. See `/scratch/deepseek-prof/HELION_A10_FUSION_FINDINGS.md`.
 
 ### CUTLASS / CuTe DSL
 

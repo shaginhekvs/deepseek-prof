@@ -1,0 +1,74 @@
+[0s] Starting LFBOTreeSearch with initial_population=FROM_BEST_AVAILABLE, copies=2, max_generations=5, similarity_penalty=1.0
+[0s] Starting with default config
+[0s] Initial population: 2 total
+[5s] Adaptive compile timeout: 30s (90% percentile=0.4s, bounds=[30.0s, 30s])
+[5s] Initial random population of 2, 2 starting points: 
+ok=2
+min=0.4045
+mid=0.5365
+max=0.5365
+best={'atomic_indexing': [],
+ 'block_sizes': [32, 512],
+ 'indexing': ['pointer', 'block_ptr', 'pointer', 'block_ptr'],
+ 'l2_groupings': [1],
+ 'load_eviction_policies': ['', '', ''],
+ 'loop_orders': [[1, 0]],
+ 'num_sm_multiplier': 1,
+ 'num_stages': 1,
+ 'num_warps': 4,
+ 'pid_type': 'persistent_blocked',
+ 'range_flattens': [None],
+ 'range_multi_buffers': [None],
+ 'range_num_stages': [0],
+ 'range_unroll_factors': [0],
+ 'range_warp_specializes': []}
+[5s] Fitting surrogate: 2 points, 2 targets
+[5s] Generation 1 starting: 21 neighbors, 2 active search path(s)
+[36s] Timeout after 30s compiling Config(atomic_indexing=[], block_sizes=[128, 512], indexing=['pointer', 'block_ptr', 'pointer', 'block_ptr'], l2_groupings=[1], load_eviction_policies=['', '', ''], loop_orders=[[1, 0]], num_sm_multiplier=1, num_stages=1, num_warps=1, pid_type='persistent_blocked', range_flattens=[False], range_multi_buffers=[None], range_num_stages=[0], range_unroll_factors=[0], range_warp_specializes=[])
+[38s] Generation 1 complete: 
+timeout=1
+ok=22
+min=0.4045
+mid=0.4270
+max=5.7631
+best={'atomic_indexing': [],
+ 'block_sizes': [32, 512],
+ 'indexing': ['pointer', 'block_ptr', 'pointer', 'block_ptr'],
+ 'l2_groupings': [1],
+ 'load_eviction_policies': ['', '', ''],
+ 'loop_orders': [[1, 0]],
+ 'num_sm_multiplier': 1,
+ 'num_stages': 1,
+ 'num_warps': 4,
+ 'pid_type': 'persistent_blocked',
+ 'range_flattens': [None],
+ 'range_multi_buffers': [None],
+ 'range_num_stages': [0],
+ 'range_unroll_factors': [0],
+ 'range_warp_specializes': []}
+[38s] Fitting surrogate: 24 points, 24 targets
+[38s] Generation 2 starting: 23 neighbors, 2 active search path(s)
+[45s] Autotune budget 45s exceeded (elapsed 45.0s); returning best-so-far.
+[45s] Generation 2 complete: 
+error=4
+ok=21
+min=0.4045
+mid=0.4137
+max=4.0668
+best={'atomic_indexing': [],
+ 'block_sizes': [32, 512],
+ 'indexing': ['pointer', 'block_ptr', 'pointer', 'block_ptr'],
+ 'l2_groupings': [1],
+ 'load_eviction_policies': ['', '', ''],
+ 'loop_orders': [[1, 0]],
+ 'num_sm_multiplier': 1,
+ 'num_stages': 1,
+ 'num_warps': 4,
+ 'pid_type': 'persistent_blocked',
+ 'range_flattens': [None],
+ 'range_multi_buffers': [None],
+ 'range_num_stages': [0],
+ 'range_unroll_factors': [0],
+ 'range_warp_specializes': []}
+[45s] Fitting surrogate: 48 points, 48 targets
+[45s] Autotune budget 45s exceeded (elapsed 45.2s); returning best-so-far.

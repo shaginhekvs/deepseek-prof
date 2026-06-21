@@ -1,0 +1,186 @@
+[
+  {
+    "shape": [
+      1024,
+      768
+    ],
+    "dtype": "torch.float16",
+    "op": "silu_mul_residual",
+    "baseline_ms": 0.026992640495300292,
+    "status": "ok",
+    "helion_ms": 0.03663872003555298,
+    "helion_speedup_vs_baseline": 0.7367244398578211,
+    "helion_first_call_s": 0.7163589000701904,
+    "helion_max_abs_error": 0.0078125,
+    "helion_max_rel_error": 1.720703125,
+    "helion_first_max_abs_error": 0.0078125,
+    "hf_activation_plus_add_ms": 0.01900544047355652,
+    "hf_activation_plus_add_speedup_vs_baseline": 1.4202586113621978,
+    "hf_activation_plus_add_max_abs_error": 0.0
+  },
+  {
+    "shape": [
+      1024,
+      768
+    ],
+    "dtype": "torch.float16",
+    "op": "add_rms_norm",
+    "baseline_ms": 0.05310463905334473,
+    "status": "ok",
+    "helion_ms": 0.03815615892410278,
+    "helion_speedup_vs_baseline": 1.3917710941233965,
+    "helion_first_call_s": 0.4632563591003418,
+    "helion_max_abs_error": 0.0,
+    "helion_max_rel_error": 0.0,
+    "helion_first_max_abs_error": 0.0
+  },
+  {
+    "shape": [
+      1024,
+      768
+    ],
+    "dtype": "torch.float16",
+    "op": "silu_mul_add_rms_norm",
+    "baseline_ms": 0.074137601852417,
+    "status": "helion_error",
+    "error": "NoConfigFound('No working config found from autotuning')"
+  },
+  {
+    "shape": [
+      8192,
+      768
+    ],
+    "dtype": "torch.float16",
+    "op": "silu_mul_residual",
+    "baseline_ms": 0.21925695419311522,
+    "status": "ok",
+    "helion_ms": 0.09971648216247558,
+    "helion_speedup_vs_baseline": 2.1988035421853662,
+    "helion_first_call_s": 0.09453511238098145,
+    "helion_max_abs_error": 0.0078125,
+    "helion_max_rel_error": 1.96875,
+    "helion_first_max_abs_error": 0.0078125,
+    "hf_activation_plus_add_ms": 0.15550463676452636,
+    "hf_activation_plus_add_speedup_vs_baseline": 1.4099705240630613,
+    "hf_activation_plus_add_max_abs_error": 0.0
+  },
+  {
+    "shape": [
+      8192,
+      768
+    ],
+    "dtype": "torch.float16",
+    "op": "add_rms_norm",
+    "baseline_ms": 0.2810470390319824,
+    "status": "ok",
+    "helion_ms": 0.07841279983520508,
+    "helion_speedup_vs_baseline": 3.584198493391897,
+    "helion_first_call_s": 0.1290895938873291,
+    "helion_max_abs_error": 0.0,
+    "helion_max_rel_error": 0.0,
+    "helion_first_max_abs_error": 0.0
+  },
+  {
+    "shape": [
+      8192,
+      768
+    ],
+    "dtype": "torch.float16",
+    "op": "silu_mul_add_rms_norm",
+    "baseline_ms": 0.4216396713256836,
+    "status": "helion_error",
+    "error": "NoConfigFound('No working config found from autotuning')"
+  },
+  {
+    "shape": [
+      1024,
+      3072
+    ],
+    "dtype": "torch.float16",
+    "op": "silu_mul_residual",
+    "baseline_ms": 0.11640768051147461,
+    "status": "ok",
+    "helion_ms": 0.053837437629699704,
+    "helion_speedup_vs_baseline": 2.1622069258225194,
+    "helion_first_call_s": 0.16133832931518555,
+    "helion_max_abs_error": 0.015625,
+    "helion_max_rel_error": 1.828125,
+    "helion_first_max_abs_error": 0.015625,
+    "hf_activation_plus_add_ms": 0.08159232139587402,
+    "hf_activation_plus_add_speedup_vs_baseline": 1.4266989652945594,
+    "hf_activation_plus_add_max_abs_error": 0.0
+  },
+  {
+    "shape": [
+      1024,
+      3072
+    ],
+    "dtype": "torch.float16",
+    "op": "add_rms_norm",
+    "baseline_ms": 0.14295040130615233,
+    "status": "ok",
+    "helion_ms": 0.040813441276550295,
+    "helion_speedup_vs_baseline": 3.5025324215501934,
+    "helion_first_call_s": 0.4328348636627197,
+    "helion_max_abs_error": 0.0,
+    "helion_max_rel_error": 0.0,
+    "helion_first_max_abs_error": 0.0
+  },
+  {
+    "shape": [
+      1024,
+      3072
+    ],
+    "dtype": "torch.float16",
+    "op": "silu_mul_add_rms_norm",
+    "baseline_ms": 0.2189516830444336,
+    "status": "helion_error",
+    "error": "NoConfigFound('No working config found from autotuning')"
+  },
+  {
+    "shape": [
+      8192,
+      3072
+    ],
+    "dtype": "torch.float16",
+    "op": "silu_mul_residual",
+    "baseline_ms": 0.848752670288086,
+    "status": "ok",
+    "helion_ms": 0.40208385467529295,
+    "helion_speedup_vs_baseline": 2.1108847331696645,
+    "helion_first_call_s": 0.10209274291992188,
+    "helion_max_abs_error": 0.015625,
+    "helion_max_rel_error": 1.9462890625,
+    "helion_first_max_abs_error": 0.015625,
+    "hf_activation_plus_add_ms": 0.6257868957519531,
+    "hf_activation_plus_add_speedup_vs_baseline": 1.3562966499453692,
+    "hf_activation_plus_add_max_abs_error": 0.0
+  },
+  {
+    "shape": [
+      8192,
+      3072
+    ],
+    "dtype": "torch.float16",
+    "op": "add_rms_norm",
+    "baseline_ms": 1.0716748809814454,
+    "status": "ok",
+    "helion_ms": 0.2966937637329102,
+    "helion_speedup_vs_baseline": 3.6120573196347636,
+    "helion_first_call_s": 0.12966346740722656,
+    "helion_max_abs_error": 0.0,
+    "helion_max_rel_error": 0.0,
+    "helion_first_max_abs_error": 0.0
+  },
+  {
+    "shape": [
+      8192,
+      3072
+    ],
+    "dtype": "torch.float16",
+    "op": "silu_mul_add_rms_norm",
+    "baseline_ms": 1.6120626831054687,
+    "status": "helion_error",
+    "error": "NoConfigFound('No working config found from autotuning')"
+  }
+]

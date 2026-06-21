@@ -1,0 +1,4 @@
+[0s] Starting LFBOTreeSearch with initial_population=FROM_BEST_AVAILABLE, copies=2, max_generations=5, similarity_penalty=1.0
+[0s] Starting with default config
+[0s] Initial population: 1 total
+[4s] Adaptive compile timeout: 30s (90% percentile=0.0s, bounds=[30.0s, 30s])
