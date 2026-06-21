@@ -1,0 +1,155 @@
+[
+  {
+    "shape_mkn": [
+      8,
+      768,
+      3072
+    ],
+    "dtype": "torch.float16",
+    "helion_first_call_s": 0.7598187923431396,
+    "torch_mm_ms": 0.011203839778900146,
+    "helion_mm_ms": 0.038949759006500245,
+    "helion_speedup_vs_torch_mm": 0.28764850065003894,
+    "torch_tflops": 3.369267746142805,
+    "helion_tflops": 0.9691648154665139,
+    "max_rel_error_first": 0.0,
+    "max_rel_error_after_timing": 0.0,
+    "max_abs_error_after_timing": 0.0
+  },
+  {
+    "shape_mkn": [
+      16,
+      768,
+      3072
+    ],
+    "dtype": "torch.float16",
+    "helion_first_call_s": 0.22774624824523926,
+    "torch_mm_ms": 0.013312000036239623,
+    "helion_mm_ms": 0.03858432054519653,
+    "helion_speedup_vs_torch_mm": 0.34501061177548376,
+    "torch_tflops": 5.671384599945249,
+    "helion_tflops": 1.9566878704411677,
+    "max_rel_error_first": 0.0,
+    "max_rel_error_after_timing": 0.0,
+    "max_abs_error_after_timing": 0.0
+  },
+  {
+    "shape_mkn": [
+      32,
+      768,
+      3072
+    ],
+    "dtype": "torch.float16",
+    "helion_first_call_s": 0.23856568336486816,
+    "torch_mm_ms": 0.012083200216293334,
+    "helion_mm_ms": 0.0386246395111084,
+    "helion_speedup_vs_torch_mm": 0.3128365822758869,
+    "torch_tflops": 12.496270962753234,
+    "helion_tflops": 3.909290699181128,
+    "max_rel_error_first": 0.0,
+    "max_rel_error_after_timing": 0.0,
+    "max_abs_error_after_timing": 0.0
+  },
+  {
+    "shape_mkn": [
+      8,
+      3072,
+      768
+    ],
+    "dtype": "torch.float16",
+    "helion_first_call_s": 0.24321603775024414,
+    "torch_mm_ms": 0.01423424005508423,
+    "helion_mm_ms": 0.038813440799713134,
+    "helion_speedup_vs_torch_mm": 0.3667348156154564,
+    "torch_tflops": 2.651967077548112,
+    "helion_tflops": 0.9725686572028677,
+    "max_rel_error_first": 1.47509765625,
+    "max_rel_error_after_timing": 1.47509765625,
+    "max_abs_error_after_timing": 0.125
+  },
+  {
+    "shape_mkn": [
+      16,
+      3072,
+      768
+    ],
+    "dtype": "torch.float16",
+    "helion_first_call_s": 0.4341285228729248,
+    "torch_mm_ms": 0.016304639577865602,
+    "helion_mm_ms": 0.039174399375915527,
+    "helion_speedup_vs_torch_mm": 0.4162064980603051,
+    "torch_tflops": 4.630428758602659,
+    "helion_tflops": 1.9272145381357386,
+    "max_rel_error_first": 1.47509765625,
+    "max_rel_error_after_timing": 1.47509765625,
+    "max_abs_error_after_timing": 0.125
+  },
+  {
+    "shape_mkn": [
+      32,
+      3072,
+      768
+    ],
+    "dtype": "torch.float16",
+    "helion_first_call_s": 0.2870502471923828,
+    "torch_mm_ms": 0.015073280334472656,
+    "helion_mm_ms": 0.03876863956451416,
+    "helion_speedup_vs_torch_mm": 0.38880085821400817,
+    "torch_tflops": 10.017391082064195,
+    "helion_tflops": 3.8947702497719106,
+    "max_rel_error_first": 0.0,
+    "max_rel_error_after_timing": 0.0,
+    "max_abs_error_after_timing": 0.0
+  },
+  {
+    "shape_mkn": [
+      8,
+      768,
+      768
+    ],
+    "dtype": "torch.float16",
+    "helion_first_call_s": 0.23625850677490234,
+    "torch_mm_ms": 0.0158515202999115,
+    "helion_mm_ms": 0.03833856105804443,
+    "helion_speedup_vs_torch_mm": 0.4134615348737883,
+    "torch_tflops": 0.5953488259452746,
+    "helion_tflops": 0.2461538393606411,
+    "max_rel_error_first": 1.031402587890625,
+    "max_rel_error_after_timing": 1.031402587890625,
+    "max_abs_error_after_timing": 0.0625
+  },
+  {
+    "shape_mkn": [
+      16,
+      768,
+      768
+    ],
+    "dtype": "torch.float16",
+    "helion_first_call_s": 0.21349143981933594,
+    "torch_mm_ms": 0.016280319690704346,
+    "helion_mm_ms": 0.03891263961791992,
+    "helion_speedup_vs_torch_mm": 0.4183812727833294,
+    "torch_tflops": 1.1593364478448658,
+    "helion_tflops": 0.48504465863343893,
+    "max_rel_error_first": 1.9697265625,
+    "max_rel_error_after_timing": 1.9697265625,
+    "max_abs_error_after_timing": 0.0625
+  },
+  {
+    "shape_mkn": [
+      32,
+      768,
+      768
+    ],
+    "dtype": "torch.float16",
+    "helion_first_call_s": 0.24117565155029297,
+    "torch_mm_ms": 0.017065600156784058,
+    "helion_mm_ms": 0.039567360877990725,
+    "helion_speedup_vs_torch_mm": 0.4313049892159163,
+    "torch_tflops": 2.2119782283187863,
+    "helion_tflops": 0.9540372459108756,
+    "max_rel_error_first": 0.0,
+    "max_rel_error_after_timing": 0.0,
+    "max_abs_error_after_timing": 0.0
+  }
+]

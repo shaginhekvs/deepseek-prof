@@ -55,6 +55,7 @@ The current decode-heavy Nsight trace points at these targets:
 - Best use here: author shape-specific fused kernels after Nsight identifies a hot op. It is especially useful for experimenting before deciding whether to write/maintain raw Triton or CUDA.
 - Local lab: see `/scratch/deepseek-prof/HELION_EXPERIMENTS.md`.
 - Local result: fused `silu_and_mul` was about `1.74-1.85x` faster than raw Torch and slightly faster than HF activation on the two tested shapes.
+- Local GEMM result: plain Helion GEMM lost to PyTorch/cuBLAS on the current decode-linear proxy shapes, so Helion should not replace the small-GEMM path directly.
 
 ### CUTLASS / CuTe DSL
 

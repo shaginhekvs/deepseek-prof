@@ -47,6 +47,33 @@ On the local A10, fused `silu_and_mul`:
 
 This means Helion is already competitive with a purpose-built fused activation kernel for this simple op.
 
+## GEMM Bottleneck Probe
+
+I also tested a plain Helion GEMM against the small decode-linear proxy shapes from the current vLLM bottleneck investigation.
+
+Run:
+
+```bash
+source /scratch/deepseek-prof/env/scratch_env.sh
+source /scratch/deepseek-prof/env/py312/bin/activate
+python /scratch/deepseek-prof/scripts/helion_gemm_bottleneck_lab.py --warmup 10 --iters 50
+```
+
+Artifacts:
+
+- `/scratch/deepseek-prof/profiles/helion_gemm/helion_gemm_bottleneck_lab.json`
+- `/scratch/deepseek-prof/profiles/helion_gemm/helion_gemm_bottleneck_lab.md`
+
+Result: plain Helion GEMM did not beat PyTorch/cuBLAS for the proxy decode shapes.
+
+- `M=8/16/32, K=768, N=3072`: Helion was about `0.29-0.35x` of `torch.mm`.
+- `M=8/16/32, K=3072, N=768`: Helion was about `0.37-0.42x` of `torch.mm`.
+- `M=8/16/32, K=768, N=768`: Helion was about `0.41-0.43x` of `torch.mm`.
+
+Interpretation: do not integrate a plain Helion GEMM into vLLM for this bottleneck. The better Helion path remains fused elementwise kernels or GEMM-adjacent epilogues where we remove extra kernel launches/memory traffic. For pure GEMM, use cuBLAS/CUTLASS/vLLM's existing kernel selection first.
+
+This was tested against OPT-125M proxy shapes because no DeepSeek model/trace is currently present under the scratch model/cache/profile directories. A true DeepSeek-V4 run should repeat the same method using actual MLA/MLP shapes from the trace.
+
 ## What To Try With Helion
 
 Good candidates:
