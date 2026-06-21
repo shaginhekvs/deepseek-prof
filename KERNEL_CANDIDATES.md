@@ -66,6 +66,7 @@ The current decode-heavy Nsight trace points at these targets:
 - Best use here: compare exact vLLM/DeepSeek GEMM shapes against cuBLAS/vLLM, then specialize only if a shape or epilogue makes CUTLASS better.
 - Local lab: see `/scratch/deepseek-prof/CUTLASS_EXPERIMENTS.md`.
 - Local result: plain fp16 CUTLASS BMM was `1.21x` faster than `torch.bmm` on `(B=2,M=512,N=512,K=256)`, but slower on smaller batched shapes. This points toward shape-specific or epilogue-fused CUTLASS work rather than a broad drop-in replacement.
+- Same-shape GEMM comparison: CuTeDSL beat Helion GEMM on the decode-linear proxy shapes, but still lost to `torch.mm`/cuBLAS. Use CuTeDSL before Helion for custom GEMM, but do not replace cuBLAS without an exact-shape win.
 
 ### Already Installed vLLM-Adjacent Kernels
 

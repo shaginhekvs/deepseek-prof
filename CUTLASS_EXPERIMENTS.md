@@ -48,6 +48,30 @@ Interpretation: the simple CUTLASS example is competitive, but not automatically
 - grouped GEMM if the model path has many same-ish small expert/projection GEMMs;
 - comparing against vLLM's existing CUTLASS kernel selection, not just against raw PyTorch.
 
+## CuTeDSL vs Helion vs Torch
+
+I also ran a same-shape comparison for the decode-linear proxy shapes:
+
+```bash
+source /scratch/deepseek-prof/env/scratch_env.sh
+source /scratch/deepseek-prof/env/py312/bin/activate
+python /scratch/deepseek-prof/scripts/compare_gemm_backends_lab.py --warmup 10 --iters 50
+```
+
+Artifacts:
+
+- `/scratch/deepseek-prof/profiles/gemm_backend_compare/gemm_backend_compare.json`
+- `/scratch/deepseek-prof/profiles/gemm_backend_compare/gemm_backend_compare.md`
+
+Result:
+
+- CuTeDSL was faster than Helion GEMM on all tested proxy shapes.
+- CuTeDSL still lost to `torch.mm`/cuBLAS on all tested proxy shapes.
+- Best CuTeDSL cases were `K=768,N=768`, where it reached about `0.81-0.86x` of `torch.mm`.
+- `K=3072,N=768` was poor for this simple CuTeDSL BMM path, about `0.23x` of `torch.mm`.
+
+Interpretation: CuTeDSL is the better custom-kernel DSL for GEMM here, but the off-the-shelf Ampere `TensorOpGemm` example is still not a replacement for cuBLAS/vLLM's current GEMM path. CUTLASS remains worth using for exact-shape specialization, grouped GEMM, and fused epilogues.
+
 ## How This Compares To Helion
 
 Use Helion for fast iteration on fused elementwise kernels and epilogues. Use CUTLASS when the hot operation is a GEMM or GEMM-like contraction and you need Tensor Core control.
