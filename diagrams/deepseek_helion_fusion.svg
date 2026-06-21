@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="620" viewBox="0 0 1200 620">
+  <defs>
+    <style>
+      .bg { fill: #f8fafc; }
+      .old { fill: #fff7ed; stroke: #c2410c; stroke-width: 2; rx: 10; }
+      .new { fill: #ecfdf5; stroke: #047857; stroke-width: 2; rx: 10; }
+      .box { fill: #ffffff; stroke: #334155; stroke-width: 2; rx: 10; }
+      .text { font-family: Inter, Arial, sans-serif; fill: #111827; font-size: 22px; font-weight: 800; }
+      .sub { font-family: Inter, Arial, sans-serif; fill: #374151; font-size: 16px; }
+      .title { font-family: Inter, Arial, sans-serif; fill: #0f172a; font-size: 34px; font-weight: 800; }
+      .metric { font-family: Inter, Arial, sans-serif; fill: #065f46; font-size: 28px; font-weight: 900; }
+      .arrow { stroke: #64748b; stroke-width: 3; marker-end: url(#arrow); fill: none; }
+    </style>
+    <marker id="arrow" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto">
+      <path d="M2,2 L10,6 L2,10 Z" fill="#64748b"/>
+    </marker>
+  </defs>
+  <rect class="bg" width="1200" height="620"/>
+  <text class="title" x="60" y="58">DeepSeek FP16 path: scale + residual RMSNorm fusion</text>
+
+  <text class="text" x="80" y="122">Before</text>
+  <rect class="old" x="80" y="145" width="210" height="90"/>
+  <text class="text" x="122" y="182">scale x</text>
+  <text class="sub" x="115" y="210">hidden_states *= s</text>
+  <path class="arrow" d="M290 190 H335"/>
+  <rect class="old" x="335" y="145" width="210" height="90"/>
+  <text class="text" x="374" y="182">scale residual</text>
+  <text class="sub" x="378" y="210">residual *= s</text>
+  <path class="arrow" d="M545 190 H590"/>
+  <rect class="old" x="590" y="145" width="260" height="90"/>
+  <text class="text" x="630" y="182">vLLM fused op</text>
+  <text class="sub" x="625" y="210">add + RMSNorm</text>
+  <path class="arrow" d="M850 190 H895"/>
+  <rect class="box" x="895" y="145" width="220" height="90"/>
+  <text class="text" x="940" y="182">output</text>
+  <text class="sub" x="925" y="210">hidden + residual</text>
+
+  <text class="text" x="80" y="332">After</text>
+  <rect class="new" x="80" y="360" width="500" height="130"/>
+  <text class="text" x="130" y="405">Helion fused kernel</text>
+  <text class="sub" x="130" y="438">y = (hidden_states + residual) * scale</text>
+  <text class="sub" x="130" y="466">residual_out = y; hidden_out = rms_norm(y)</text>
+  <path class="arrow" d="M580 425 H675"/>
+  <rect class="box" x="675" y="360" width="220" height="130"/>
+  <text class="text" x="720" y="410">output</text>
+  <text class="sub" x="705" y="440">same tensors</text>
+
+  <text class="metric" x="675" y="545">3.09x at 1024x3072</text>
+  <text class="sub" x="675" y="575">0.1637 ms scale+vLLM C -> 0.0531 ms Helion fused on A10</text>
+</svg>

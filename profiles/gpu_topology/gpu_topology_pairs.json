@@ -1,0 +1,322 @@
+[
+  {
+    "kind": "cuda_peer_copy",
+    "src": 0,
+    "dst": 1,
+    "size_bytes": 4096,
+    "size": "4KB",
+    "ms": 0.013698047637939453,
+    "gbps_one_way": 0.29902071508755146
+  },
+  {
+    "kind": "cuda_peer_copy",
+    "src": 0,
+    "dst": 1,
+    "size_bytes": 1048576,
+    "size": "1MB",
+    "ms": 0.060401664733886716,
+    "gbps_one_way": 17.360051326726513
+  },
+  {
+    "kind": "cuda_peer_copy",
+    "src": 0,
+    "dst": 1,
+    "size_bytes": 67108864,
+    "size": "64MB",
+    "ms": 3.0720001220703126,
+    "gbps_one_way": 21.845332465277814
+  },
+  {
+    "kind": "cuda_peer_copy",
+    "src": 0,
+    "dst": 1,
+    "size_bytes": 268435456,
+    "size": "256MB",
+    "ms": 12.223526611328126,
+    "gbps_one_way": 21.960557254501992
+  },
+  {
+    "kind": "cuda_peer_copy",
+    "src": 0,
+    "dst": 2,
+    "size_bytes": 4096,
+    "size": "4KB",
+    "ms": 0.013945856094360352,
+    "gbps_one_way": 0.29370731866768696
+  },
+  {
+    "kind": "cuda_peer_copy",
+    "src": 0,
+    "dst": 2,
+    "size_bytes": 1048576,
+    "size": "1MB",
+    "ms": 0.07099801635742188,
+    "gbps_one_way": 14.769088684410626
+  },
+  {
+    "kind": "cuda_peer_copy",
+    "src": 0,
+    "dst": 2,
+    "size_bytes": 67108864,
+    "size": "64MB",
+    "ms": 3.6303668212890625,
+    "gbps_one_way": 18.48542235634776
+  },
+  {
+    "kind": "cuda_peer_copy",
+    "src": 0,
+    "dst": 2,
+    "size_bytes": 268435456,
+    "size": "256MB",
+    "ms": 14.472479248046875,
+    "gbps_one_way": 18.54799384398679
+  },
+  {
+    "kind": "cuda_peer_copy",
+    "src": 2,
+    "dst": 3,
+    "size_bytes": 4096,
+    "size": "4KB",
+    "ms": 0.014542400360107422,
+    "gbps_one_way": 0.28165914144655996
+  },
+  {
+    "kind": "cuda_peer_copy",
+    "src": 2,
+    "dst": 3,
+    "size_bytes": 1048576,
+    "size": "1MB",
+    "ms": 0.06181478500366211,
+    "gbps_one_way": 16.96319092491997
+  },
+  {
+    "kind": "cuda_peer_copy",
+    "src": 2,
+    "dst": 3,
+    "size_bytes": 67108864,
+    "size": "64MB",
+    "ms": 3.0561688232421873,
+    "gbps_one_way": 21.958493748655695
+  },
+  {
+    "kind": "cuda_peer_copy",
+    "src": 2,
+    "dst": 3,
+    "size_bytes": 268435456,
+    "size": "256MB",
+    "ms": 12.191170654296876,
+    "gbps_one_way": 22.018841636458248
+  },
+  {
+    "kind": "cuda_peer_copy",
+    "src": 1,
+    "dst": 3,
+    "size_bytes": 4096,
+    "size": "4KB",
+    "ms": 0.013965279579162597,
+    "gbps_one_way": 0.2932988184577118
+  },
+  {
+    "kind": "cuda_peer_copy",
+    "src": 1,
+    "dst": 3,
+    "size_bytes": 1048576,
+    "size": "1MB",
+    "ms": 0.07089561462402344,
+    "gbps_one_way": 14.790421178529192
+  },
+  {
+    "kind": "cuda_peer_copy",
+    "src": 1,
+    "dst": 3,
+    "size_bytes": 67108864,
+    "size": "64MB",
+    "ms": 3.6323532104492187,
+    "gbps_one_way": 18.47531341581744
+  },
+  {
+    "kind": "cuda_peer_copy",
+    "src": 1,
+    "dst": 3,
+    "size_bytes": 268435456,
+    "size": "256MB",
+    "ms": 14.4858935546875,
+    "gbps_one_way": 18.530817928945556
+  },
+  {
+    "kind": "nccl_all_reduce_2gpu",
+    "gpus": [
+      0,
+      1
+    ],
+    "size_bytes": 4096,
+    "size": "4KB",
+    "ms": 0.052647422790527344,
+    "alg_gbps_per_rank": 0.07780057945660691
+  },
+  {
+    "kind": "nccl_all_reduce_2gpu",
+    "gpus": [
+      0,
+      1
+    ],
+    "size_bytes": 1048576,
+    "size": "1MB",
+    "ms": 0.09652735710144043,
+    "alg_gbps_per_rank": 10.862992953366094
+  },
+  {
+    "kind": "nccl_all_reduce_2gpu",
+    "gpus": [
+      0,
+      1
+    ],
+    "size_bytes": 67108864,
+    "size": "64MB",
+    "ms": 4.44010498046875,
+    "alg_gbps_per_rank": 15.114251643868835
+  },
+  {
+    "kind": "nccl_all_reduce_2gpu",
+    "gpus": [
+      0,
+      1
+    ],
+    "size_bytes": 268435456,
+    "size": "256MB",
+    "ms": 17.61470458984375,
+    "alg_gbps_per_rank": 15.239282307054639
+  },
+  {
+    "kind": "nccl_all_reduce_2gpu",
+    "gpus": [
+      0,
+      2
+    ],
+    "size_bytes": 4096,
+    "size": "4KB",
+    "ms": 0.030389951705932616,
+    "alg_gbps_per_rank": 0.1347813922060427
+  },
+  {
+    "kind": "nccl_all_reduce_2gpu",
+    "gpus": [
+      0,
+      2
+    ],
+    "size_bytes": 1048576,
+    "size": "1MB",
+    "ms": 0.10217984199523926,
+    "alg_gbps_per_rank": 10.262063236003586
+  },
+  {
+    "kind": "nccl_all_reduce_2gpu",
+    "gpus": [
+      0,
+      2
+    ],
+    "size_bytes": 67108864,
+    "size": "64MB",
+    "ms": 5.282713623046875,
+    "alg_gbps_per_rank": 12.7034832452822
+  },
+  {
+    "kind": "nccl_all_reduce_2gpu",
+    "gpus": [
+      0,
+      2
+    ],
+    "size_bytes": 268435456,
+    "size": "256MB",
+    "ms": 20.9938427734375,
+    "alg_gbps_per_rank": 12.786389747552006
+  },
+  {
+    "kind": "nccl_all_reduce_2gpu",
+    "gpus": [
+      2,
+      3
+    ],
+    "size_bytes": 4096,
+    "size": "4KB",
+    "ms": 0.02939308738708496,
+    "alg_gbps_per_rank": 0.13935249285176293
+  },
+  {
+    "kind": "nccl_all_reduce_2gpu",
+    "gpus": [
+      2,
+      3
+    ],
+    "size_bytes": 1048576,
+    "size": "1MB",
+    "ms": 0.09584639549255371,
+    "alg_gbps_per_rank": 10.940171454663245
+  },
+  {
+    "kind": "nccl_all_reduce_2gpu",
+    "gpus": [
+      2,
+      3
+    ],
+    "size_bytes": 67108864,
+    "size": "64MB",
+    "ms": 4.433121337890625,
+    "alg_gbps_per_rank": 15.138061624077238
+  },
+  {
+    "kind": "nccl_all_reduce_2gpu",
+    "gpus": [
+      2,
+      3
+    ],
+    "size_bytes": 268435456,
+    "size": "256MB",
+    "ms": 17.730784912109375,
+    "alg_gbps_per_rank": 15.13951341300576
+  },
+  {
+    "kind": "nccl_all_reduce_2gpu",
+    "gpus": [
+      1,
+      3
+    ],
+    "size_bytes": 4096,
+    "size": "4KB",
+    "ms": 0.030500608444213866,
+    "alg_gbps_per_rank": 0.13429240296932615
+  },
+  {
+    "kind": "nccl_all_reduce_2gpu",
+    "gpus": [
+      1,
+      3
+    ],
+    "size_bytes": 1048576,
+    "size": "1MB",
+    "ms": 0.10308608055114746,
+    "alg_gbps_per_rank": 10.171848559900733
+  },
+  {
+    "kind": "nccl_all_reduce_2gpu",
+    "gpus": [
+      1,
+      3
+    ],
+    "size_bytes": 67108864,
+    "size": "64MB",
+    "ms": 5.264813842773438,
+    "alg_gbps_per_rank": 12.746673672444208
+  },
+  {
+    "kind": "nccl_all_reduce_2gpu",
+    "gpus": [
+      1,
+      3
+    ],
+    "size_bytes": 268435456,
+    "size": "256MB",
+    "ms": 20.7440478515625,
+    "alg_gbps_per_rank": 12.940360431138357
+  }
+]

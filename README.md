@@ -38,6 +38,14 @@ Core references:
 - [RUNBOOK.md](RUNBOOK.md): setup, cache redirection, source checkouts, profiler commands.
 - [PROFILER_LAB.md](PROFILER_LAB.md): PyTorch Profiler, Dynamo/Inductor/ATen inspection, Nsight Systems, Nsight Compute, CPU, memory, and NCCL notes.
 - [REALISTIC_BENCHMARKS.md](REALISTIC_BENCHMARKS.md): realistic vLLM workload matrix and trace-reading workflow.
+- [MEDIUM_ARTICLE.md](MEDIUM_ARTICLE.md): narrative article draft for the whole investigation.
+
+Article diagrams:
+
+- [diagrams/pytorch_to_gpu_stack.svg](diagrams/pytorch_to_gpu_stack.svg)
+- [diagrams/profiling_optimization_loop.svg](diagrams/profiling_optimization_loop.svg)
+- [diagrams/deepseek_helion_fusion.svg](diagrams/deepseek_helion_fusion.svg)
+- [diagrams/a10_gpu_topology.svg](diagrams/a10_gpu_topology.svg)
 
 The mental model is:
 
@@ -72,6 +80,49 @@ References:
 The important rule is that a kernel only matters if it maps back to an operation in the vLLM DeepSeek pipeline.
 
 ## DeepSeek vLLM Findings
+
+### 0. A10 GPU Topology
+
+This server has four local A10 GPUs, but no NVLink/NVSwitch fabric. `nvidia-smi topo -m` shows two closer PCIe/NUMA GPU islands:
+
+```text
+GPU0 <-> GPU1: NODE
+GPU2 <-> GPU3: NODE
+cross-island pairs such as GPU0 <-> GPU2: SYS
+```
+
+NVLS is therefore not applicable on this host. The practical question is how much the cross-NUMA `SYS` path costs.
+
+Benchmark:
+
+- [scripts/bench_gpu_topology_pairs.py](scripts/bench_gpu_topology_pairs.py)
+- [profiles/gpu_topology/gpu_topology_pairs.md](profiles/gpu_topology/gpu_topology_pairs.md)
+
+Measured `0,1` versus `0,2`:
+
+```text
+CUDA peer copy, 256MB:
+0 -> 1: 21.96 GB/s
+0 -> 2: 18.55 GB/s
+loss: about 15.5%
+
+NCCL 2-GPU all-reduce, 256MB:
+0,1: 15.24 GB/s per rank
+0,2: 12.79 GB/s per rank
+loss: about 16.1%
+```
+
+The mirrored pair shows the same pattern:
+
+```text
+2 -> 3 peer copy: 22.02 GB/s
+1 -> 3 peer copy: 18.53 GB/s
+
+2,3 NCCL 256MB: 15.14 GB/s per rank
+1,3 NCCL 256MB: 12.94 GB/s per rank
+```
+
+Practical placement rule: prefer tightly-coupled tensor-parallel or frequent MoE communication inside `0,1` or inside `2,3`. Crossing between the two islands is still usable, but large transfers and collectives cost roughly `1.19x` time on this machine.
 
 ### 1. `fused_add_rms_norm`
 
@@ -175,4 +226,3 @@ Candidate integration path:
 3. Guard by dtype, shape, CUDA device, and row count.
 4. Compare end-to-end serving latency and throughput against baseline vLLM.
 5. Use Nsight Systems and PyTorch Profiler to verify the separate scale kernels disappeared and the new Helion kernel appears in the right place.
-

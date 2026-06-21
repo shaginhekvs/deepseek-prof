@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="620" viewBox="0 0 1200 620">
+  <defs>
+    <style>
+      .bg { fill: #fbfbf8; }
+      .node { fill: #ffffff; stroke: #334e68; stroke-width: 2; rx: 12; }
+      .hot { fill: #fff3e6; stroke: #b85c00; stroke-width: 2; rx: 12; }
+      .win { fill: #e8f8f0; stroke: #197741; stroke-width: 2; rx: 12; }
+      .text { font-family: Inter, Arial, sans-serif; fill: #1f2933; font-size: 23px; font-weight: 800; }
+      .sub { font-family: Inter, Arial, sans-serif; fill: #3e4c59; font-size: 16px; }
+      .title { font-family: Inter, Arial, sans-serif; fill: #102a43; font-size: 34px; font-weight: 800; }
+      .arrow { stroke: #52606d; stroke-width: 3; marker-end: url(#arrow); fill: none; }
+    </style>
+    <marker id="arrow" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto">
+      <path d="M2,2 L10,6 L2,10 Z" fill="#52606d"/>
+    </marker>
+  </defs>
+  <rect class="bg" width="1200" height="620"/>
+  <text class="title" x="60" y="60">Inference engineering loop</text>
+
+  <rect class="node" x="90" y="130" width="230" height="105"/>
+  <text class="text" x="130" y="173">Discover</text>
+  <text class="sub" x="125" y="202">model path, IR, kernels</text>
+
+  <path class="arrow" d="M320 182 H430"/>
+
+  <rect class="node" x="430" y="130" width="230" height="105"/>
+  <text class="text" x="480" y="173">Observe</text>
+  <text class="sub" x="460" y="202">knobs and dispatch</text>
+
+  <path class="arrow" d="M660 182 H770"/>
+
+  <rect class="hot" x="770" y="130" width="250" height="105"/>
+  <text class="text" x="825" y="173">Profile</text>
+  <text class="sub" x="800" y="202">timelines, CPU, memory, NCCL</text>
+
+  <path class="arrow" d="M895 235 V335"/>
+
+  <rect class="hot" x="770" y="335" width="250" height="105"/>
+  <text class="text" x="805" y="378">Find Weakpoints</text>
+  <text class="sub" x="800" y="407">real model bottlenecks</text>
+
+  <path class="arrow" d="M770 388 H660"/>
+
+  <rect class="node" x="430" y="335" width="230" height="105"/>
+  <text class="text" x="470" y="378">Experiment</text>
+  <text class="sub" x="463" y="407">Helion, HF, CUTLASS</text>
+
+  <path class="arrow" d="M430 388 H320"/>
+
+  <rect class="win" x="90" y="335" width="230" height="105"/>
+  <text class="text" x="142" y="378">Validate</text>
+  <text class="sub" x="125" y="407">microbench then serving</text>
+
+  <path class="arrow" d="M205 335 V260"/>
+  <path class="arrow" d="M205 130 C205 95 895 95 895 130"/>
+
+  <text class="sub" x="90" y="525">Keep only experiments that map to real execution paths.</text>
+</svg>
